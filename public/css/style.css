@@ -1,0 +1,132 @@
+:root {
+    color-scheme: light;
+    --color-bg: #aef3f7;
+    --color-surface: #ffffff;
+    --color-surface-muted: #e6f7f8;
+    --color-text: #172033;
+    --color-muted: #667085;
+    --color-primary: #167b83;
+    --color-primary-hover: #105f65;
+    --color-border: #b9c5c7;
+    --color-focus: rgb(22 123 131 / 35%);
+    --shadow-soft: 0 8px 24px rgb(0 0 0 / 12%);
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --color-bg: #101418;
+    --color-surface: #171d24;
+    --color-surface-muted: #202833;
+    --color-text: #edf2f7;
+    --color-muted: #a8b3c2;
+    --color-primary: #5fcbd3;
+    --color-primary-hover: #8adce2;
+    --color-border: #2f3a48;
+    --color-focus: rgb(95 203 211 / 45%);
+    --shadow-soft: 0 8px 24px rgb(0 0 0 / 32%);
+}
+
+html {
+    background: var(--color-bg);
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    min-height: 100vh;
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* POLA FORMULARZ */
+input {
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    font: inherit;
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+}
+
+input:focus {
+    border-color: var(--color-primary);
+    outline: 3px solid var(--color-focus);
+}
+
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    font: inherit;
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+}
+
+
+/* PRZYCISKI */
+
+button {
+    margin-top: 0.75rem;
+    padding: 0.8rem 1rem;
+    color: var(--color-surface);
+    font: inherit;
+    font-weight: 700;
+    background-color: var(--color-primary);
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-primary-hover);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+a {
+    color: var(--color-primary);
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 20;
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    box-shadow: var(--shadow-soft);
+}
+
+.theme-toggle:hover {
+    background: var(--color-surface-muted);
+}
