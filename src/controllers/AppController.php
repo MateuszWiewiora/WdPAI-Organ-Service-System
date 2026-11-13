@@ -6,6 +6,16 @@ namespace App\Controller;
 
 abstract class AppController
 {
+    protected function isGet(): bool
+    {
+        return ($_SERVER['REQUEST_METHOD'] ?? '') === 'GET';
+    }
+
+    protected function isPost(): bool
+    {
+        return ($_SERVER['REQUEST_METHOD'] ?? '') === 'POST';
+    }
+
     protected function render(string $template, array $variables = []): void
     {
         $viewsPath = dirname(__DIR__, 2) . '/public/views';
