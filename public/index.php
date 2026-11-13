@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Controller\AboutController;
 use App\Controller\DefaultController;
 use App\Controller\ProjectController;
 use App\Routing;
@@ -14,6 +15,7 @@ $routing = new Routing();
 $routing->get('/projects', ProjectController::class, 'index');
 $routing->get('/projects/{id}', ProjectController::class, 'show');
 $routing->get('/', DefaultController::class, 'index');
+$routing->get('/about', AboutController::class, 'index');
 $routing->get('/mateusz', DefaultController::class, 'mateusz');
 
 $routeFound = $routing->dispatch(
